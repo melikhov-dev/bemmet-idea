@@ -1,0 +1,50 @@
+<idea-plugin version="2">
+  <id>info.bem.bemmet</id>
+  <name>Bemmet for IDEA</name>
+  <version>0.1.0</version>
+  <vendor email="amel.truelife@gmail.com" url="https://github.com/amel-true/bemmet-idea">amel-true</vendor>
+
+  <description><![CDATA[
+      Bemmet plugin for IDEA
+    ]]></description>
+
+  <change-notes><![CDATA[
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <projectService serviceImplementation="info.bem.intellij.bemmet.plugin.settings.Settings"
+                    serviceInterface="info.bem.intellij.bemmet.plugin.settings.Settings"/>
+    <projectConfigurable groupId="tools" displayName="Bemmet Plugin"
+                         id="info.bem.intellij.bemmet.plugin.config.bemmetConfigurable"
+                         instance="info.bem.intellij.bemmet.plugin.settings.BemmetSettingsPage"/>
+  </extensions>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
+
+  <actions>
+    <action id="info.bem.bemmet.text2bemjson" class="info.bem.intellij.bemmet.plugin.action.text2bemjson"
+            text="text2bemjson"
+            description="conver text 2 bemjson">
+      <add-to-group group-id="RefactoringMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift B"/>
+    </action>
+    <!-- Add your actions here -->
+  </actions>
+
+  <project-components>
+    <component>
+      <implementation-class>info.bem.intellij.bemmet.plugin.BemmetPluginProjectComponent</implementation-class>
+    </component>
+  </project-components>
+
+</idea-plugin>
