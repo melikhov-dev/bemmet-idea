@@ -39,7 +39,6 @@ public class BemmetRunner {
             result.errorOutput = out.getStderr();
             try {
                 result.bemJson = out.getStdout();
-                VirtualFileManager.getInstance().refreshWithoutFileWatcher(false);
             } catch (Exception e) {
                 LOG.error(e);
             }
