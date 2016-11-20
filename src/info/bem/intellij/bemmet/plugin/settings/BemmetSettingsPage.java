@@ -159,7 +159,7 @@ public class BemmetSettingsPage implements Configurable {
         Settings settings = getSettings();
         nodeInterpreterField.getChildComponent().setText(settings.nodeInterpreter);
         bemmetField.getChildComponent().setText(settings.bemmetPath);
-        useTabCheckbox.setSelected(settings.indent == "\t");
+        useTabCheckbox.setSelected(settings.indent.equals("\t"));
     }
 
     @Override
