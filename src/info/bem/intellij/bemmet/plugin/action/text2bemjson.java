@@ -49,7 +49,8 @@ public class text2bemjson extends AnAction {
         BemmetResult bemmetResult = BemmetRunner.run(
                 component.nodeInterpreter,
                 component.bemmetPath,
-                selectedText);
+                selectedText,
+                component.indent);
         final String bemJson = bemmetResult.getBemJson();
 
         return new Runnable() {

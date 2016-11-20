@@ -38,6 +38,8 @@ public class BemmetSettingsPage implements Configurable {
     private HyperlinkLabel usageLink;
     private JLabel nodeInterpreterLabel;
     private JLabel pathToBemmetLabel;
+    private JLabel IndentLabel;
+    private JCheckBox useTabCheckbox;
 
     public BemmetSettingsPage(@NotNull final Project project) {
         this.project = project;
@@ -150,12 +152,14 @@ public class BemmetSettingsPage implements Configurable {
     public void copyTo(Settings settings) {
         settings.nodeInterpreter = nodeInterpreterField.getChildComponent().getText();
         settings.bemmetPath = bemmetField.getChildComponent().getText();
+        settings.indent = useTabCheckbox.isSelected() ? "\t" : " ";
     }
 
     protected void loadSettings() {
         Settings settings = getSettings();
         nodeInterpreterField.getChildComponent().setText(settings.nodeInterpreter);
         bemmetField.getChildComponent().setText(settings.bemmetPath);
+        useTabCheckbox.setSelected(settings.indent == "\t");
     }
 
     @Override

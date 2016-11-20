@@ -12,6 +12,7 @@ public class BemmetPluginProjectComponent implements ProjectComponent {
     protected Project project;
     public String nodeInterpreter;
     public String bemmetPath;
+    public String indent;
     public boolean treatAsWarnings;
     protected boolean settingValidStatus;
     protected String settingValidVersion;
@@ -67,6 +68,7 @@ public class BemmetPluginProjectComponent implements ProjectComponent {
     public boolean validateSettings() {
         nodeInterpreter = settings.nodeInterpreter;
         bemmetPath = settings.bemmetPath;
+        indent = settings.indent;
         treatAsWarnings = settings.treatAllIssuesAsWarnings;
         settingValidStatus = true;
         return true;

@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 public class Settings implements PersistentStateComponent<Settings> {
     public String nodeInterpreter;
     public String bemmetPath;
+    public String indent;
     public boolean treatAllIssuesAsWarnings;
 
     protected Project project;
@@ -34,13 +35,14 @@ public class Settings implements PersistentStateComponent<Settings> {
     }
 
     public String getVersion() {
-        return nodeInterpreter  + bemmetPath;
+        return nodeInterpreter  + bemmetPath + indent;
     }
 
     public boolean isEqualTo(Settings settings) {
         return settings != null &&
                 treatAllIssuesAsWarnings == settings.treatAllIssuesAsWarnings &&
                 Strings.areEqual(nodeInterpreter, settings.nodeInterpreter) &&
-                Strings.areEqual(bemmetPath, settings.bemmetPath);
+                Strings.areEqual(bemmetPath, settings.bemmetPath) &&
+                Strings.areEqual(bemmetPath, settings.indent);
     }
 }

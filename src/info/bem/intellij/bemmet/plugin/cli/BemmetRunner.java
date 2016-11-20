@@ -24,9 +24,13 @@ public class BemmetRunner {
     public static BemmetResult run(
             @NotNull String nodeInterpreter,
             @NotNull String bemmetPath,
-            @NotNull String text
+            @NotNull String text,
+            String indent
     ) {
-        BemmetSettings settings = BemmetSettings.build(nodeInterpreter, bemmetPath, text);
+        if (indent.isEmpty()){
+            indent = "    ";
+        }
+        BemmetSettings settings = BemmetSettings.build(nodeInterpreter, bemmetPath, text, indent);
 
         return run(settings);
     }
@@ -62,7 +66,7 @@ public class BemmetRunner {
 
         commandLine.addParameter("-e");
 
-        String nodeCode = "console.log(require('" + settings.bemmetPath + "').stringify('" + settings.text  +"'))";
+        String nodeCode = "console.log(require('" + settings.bemmetPath + "').stringify('" + settings.text  +"', {indent: '"+ settings.indent + "' }))";
 
         commandLine.addParameter(nodeCode);
 
