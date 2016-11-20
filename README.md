@@ -17,7 +17,7 @@ Download [bemmet-idea.jar](https://github.com/amel-true/bemmet-idea/raw/master/b
   * On Mac/Unix should point to ```/usr/local/bin/node```
 * Set the path to the bemmet source.
   * On Mac/Unix should point to ```/usr/local/lib/node_modules/bemmet```
-  * On Windows should point to  ````C:\Users\<username>\AppData\Roaming\npm\bemmet\```
+  * On Windows should point to  ```C:\Users\<username>\AppData\Roaming\npm\bemmet\```
 
 ## Getting started
 
