@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>info.bem.bemmet</id>
   <name>Bemmet for IDEA</name>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
   <vendor email="amel.truelife@gmail.com" url="https://github.com/amel-true/bemmet-idea">amel-true</vendor>
 
   <description><![CDATA[
@@ -22,11 +22,17 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-    <projectService serviceImplementation="info.bem.intellij.bemmet.plugin.settings.Settings"
-                    serviceInterface="info.bem.intellij.bemmet.plugin.settings.Settings"/>
-    <projectConfigurable groupId="tools" displayName="Bemmet Plugin"
+    <!--<projectService serviceImplementation="info.bem.intellij.bemmet.plugin.settings.Settings"-->
+                    <!--serviceInterface="info.bem.intellij.bemmet.plugin.settings.Settings"/>-->
+    <!--<projectConfigurable groupId="tools" displayName="Bemmet Plugin"-->
+                         <!--id="info.bem.intellij.bemmet.plugin.config.bemmetConfigurable"-->
+                         <!--instance="info.bem.intellij.bemmet.plugin.settings.BemmetSettingsPage"/>-->
+
+    <projectService serviceImplementation="info.bem.intellij.bemmet.plugin.settings.Settings"/>
+    <projectConfigurable groupId="tools"
                          id="info.bem.intellij.bemmet.plugin.config.bemmetConfigurable"
-                         instance="info.bem.intellij.bemmet.plugin.settings.BemmetSettingsPage"/>
+                         displayName="Bemmet
+                         Plugin" implementation="info.bem.intellij.bemmet.plugin.settings.BemmetSettingsPage"/>
   </extensions>
   <depends>com.intellij.modules.lang</depends>
   <depends>com.intellij.modules.platform</depends>
