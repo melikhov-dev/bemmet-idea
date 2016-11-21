@@ -8,7 +8,7 @@ Install `bemmet` with npm
 npm i -g bemmet
 ```
 
-**You need to have [Node.js](http://nodejs.org) instal
+**You need to have [Node.js](http://nodejs.org) install
 
 Download [bemmet-idea.jar](https://github.com/amel-true/bemmet-idea/raw/master/bemmet-idea.jar) and install plugin (use "instal plugin from disk..." option)
 
