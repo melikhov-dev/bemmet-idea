@@ -50,7 +50,8 @@ public class text2bemjson extends AnAction {
                 component.nodeInterpreter,
                 component.bemmetPath,
                 selectedText,
-                component.indent);
+                component.indent,
+                component.singleQuotes);
         final String bemJson = bemmetResult.getBemJson();
 
         return new Runnable() {

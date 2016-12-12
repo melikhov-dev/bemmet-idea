@@ -13,6 +13,7 @@ public class Settings implements PersistentStateComponent<Settings> {
     public String nodeInterpreter;
     public String bemmetPath;
     public String indent;
+    public boolean singleQuotes;
     public boolean treatAllIssuesAsWarnings;
 
     protected Project project;
@@ -35,7 +36,7 @@ public class Settings implements PersistentStateComponent<Settings> {
     }
 
     public String getVersion() {
-        return nodeInterpreter  + bemmetPath + indent;
+        return nodeInterpreter  + bemmetPath + indent + singleQuotes;
     }
 
     public boolean isEqualTo(Settings settings) {
@@ -43,6 +44,8 @@ public class Settings implements PersistentStateComponent<Settings> {
                 treatAllIssuesAsWarnings == settings.treatAllIssuesAsWarnings &&
                 Strings.areEqual(nodeInterpreter, settings.nodeInterpreter) &&
                 Strings.areEqual(bemmetPath, settings.bemmetPath) &&
-                Strings.areEqual(bemmetPath, settings.indent);
+                Strings.areEqual(bemmetPath, settings.indent) &&
+                settings.singleQuotes;
+
     }
 }

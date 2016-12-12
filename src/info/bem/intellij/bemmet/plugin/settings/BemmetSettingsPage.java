@@ -40,6 +40,7 @@ public class BemmetSettingsPage implements Configurable {
     private JLabel pathToBemmetLabel;
     private JLabel IndentLabel;
     private JCheckBox useTabCheckbox;
+    private JCheckBox useDoubleQuotesCheckbox;
 
     public BemmetSettingsPage(@NotNull final Project project) {
         this.project = project;
@@ -153,6 +154,8 @@ public class BemmetSettingsPage implements Configurable {
         settings.nodeInterpreter = nodeInterpreterField.getChildComponent().getText();
         settings.bemmetPath = bemmetField.getChildComponent().getText();
         settings.indent = useTabCheckbox.isSelected() ? "\t" : " ";
+        settings.singleQuotes = useDoubleQuotesCheckbox.isSelected();
+
     }
 
     protected void loadSettings() {
@@ -160,6 +163,7 @@ public class BemmetSettingsPage implements Configurable {
         nodeInterpreterField.getChildComponent().setText(settings.nodeInterpreter);
         bemmetField.getChildComponent().setText(settings.bemmetPath);
         useTabCheckbox.setSelected(settings.indent.equals("\t"));
+        useDoubleQuotesCheckbox.setSelected(settings.singleQuotes);
     }
 
     @Override
