@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>info.bem.bemmet</id>
   <name>Bemmet for IDEA</name>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
   <vendor email="amel.truelife@gmail.com" url="https://github.com/amel-true/bemmet-idea">amel-true</vendor>
 
   <description><![CDATA[
